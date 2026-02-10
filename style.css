@@ -1,0 +1,226 @@
+/* --- VARIABLES --- */
+:root {
+    --purple: #7d5fff;
+    --bg-dark: #0a0a0a;
+    --dim-text: #a0a0a0;
+}
+
+/* --- RESET --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background: var(--bg-dark); 
+    color: white; 
+    scroll-behavior: smooth; 
+    overflow-x: hidden; 
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* --- NAVBAR --- */
+.navbar { 
+    padding: 20px 0; 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    background: rgba(10, 10, 10, 0.9); ;
+    z-index: 1000; 
+}
+.nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 24px; font-weight: 700; }
+.logo span { color: var(--purple); }
+.nav-menu { display: flex; list-style: none; gap: 40px; align-items: center; }
+.nav-menu a { text-decoration: none; color: white; font-size: 14px; transition: 0.3s; }
+.nav-menu a:hover { color: var(--purple); }
+.btn-nav-contact { border: 1px solid var(--purple); padding: 10px 20px; border-radius: 6px; }
+
+/* Hamburger Style */
+.menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+.menu-toggle .bar { width: 25px; height: 3px; background: white; transition: 0.3s; border-radius: 5px; }
+
+/* --- HERO --- */
+.section-hero { padding: 160px 0 100px; background: radial-gradient(circle at 70% 30%, #1a1a2e 0%, #0a0a0a 100%); }
+.hero-container { display: flex; align-items: center; justify-content: space-between; }
+.hero-title { font-size: 60px; line-height: 1.1; margin: 15px 0; font-weight: 700; }
+.hero-title span, .hello-tag { color: var(--purple); }
+.purple-line { width: 60px; height: 4px; background: var(--purple); margin-bottom: 25px; }
+.hero-desc { color: var(--dim-text); max-width: 500px; margin-bottom: 40px; }
+.hero-actions { display: flex; gap: 20px; }
+.btn-primary { background: var(--purple); color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; border: 2px solid var(--purple); transition: 0.4s; }
+.btn-primary:hover { background: transparent; color: var(--purple); }
+.btn-outline { border: 2px solid white; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; transition: 0.4s; }
+.btn-outline:hover { background: white; color: black; }
+
+/* --- WHAT DO I OFFER (FOCUS BLUR) --- */
+.section-offer { padding: 100px 0; text-align: center; }
+.offer-header { margin-bottom: 50px; }
+.tagline { color: var(--purple); font-size: 14px; margin-bottom: 10px; }
+.main-title { font-size: 32px; max-width: 800px; margin: 0 auto; }
+.offer-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; transition: 0.5s; }
+.offer-group:hover .offer-card { filter: blur(8px); opacity: 0.3; transform: scale(0.95); }
+.offer-group .offer-card:hover { filter: blur(0); opacity: 1; transform: scale(1.05); z-index: 10; }
+.offer-card { background: #111; padding: 50px 30px; border-radius: 24px; position: relative; border: 1px solid #222; overflow: hidden; transition: 0.4s; }
+.card-glow { position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0; transition: 0.5s; filter: blur(60px); pointer-events: none; }
+.offer-card:hover .card-glow { opacity: 0.2; }
+.color-purple { background: radial-gradient(circle, var(--purple) 0%, transparent 70%); }
+.color-green { background: radial-gradient(circle, #4ade80 0%, transparent 70%); }
+.color-blue { background: radial-gradient(circle, #3498db 0%, transparent 70%); }
+.icon-box {
+    font-size: 50px; /* Diperbesar agar seimbang dengan kartu */
+    margin-bottom: 25px;
+    display: block;
+}
+
+/* --- STATS --- */
+.section-stats { background: #0a0a0a; border-top: 1px dashed #333; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.stat-box { border-right: 1px dashed #333; border-bottom: 1px dashed #333; padding: 60px 20px; text-align: center; }
+.stat-box.active { background: var(--purple); border: none; }
+.stat-num { font-size: 48px; font-weight: 700; }
+
+/* --- PORTFOLIO --- */
+.section-portfolio { padding: 100px 0; }
+.portfolio-title { text-align: center; margin-bottom: 60px; font-size: 32px; }
+.portfolio-list { display: flex; flex-direction: column; gap: 30px; }
+.portfolio-item { background: #121212; padding: 25px; border-radius: 20px; display: flex; align-items: center; border: 1px solid #222; }
+.portfolio-img-box { width: 280px; height: 160px; border-radius: 12px; overflow: hidden; flex-shrink: 0; }
+.img-inner { width: 100%; height: 100%; }
+.portfolio-info { flex: 1; display: flex; justify-content: space-between; align-items: center; padding-left: 50px; }
+.text-green { color: #4ade80; }
+.btn-view-details { padding: 12px 25px; background: var(--purple); border-radius: 8px; text-decoration: none; color: white; border: 2px solid var(--purple); transition: 0.3s; }
+.btn-view-details:hover { background: transparent; color: var(--purple); }
+
+/* --- WHY HIRE ME --- */
+.section-hire { padding: 100px 0; text-align: center; }
+.section-title-center { font-size: 32px; margin-bottom: 60px; }
+.hire-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.icon-outline { width: 90px; height: 90px; border: 1px solid #333; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; transition: 0.4s; }
+.hire-item:hover .icon-outline { border-color: var(--purple); transform: scale(1.1); }
+.icon-circle {
+    font-size: 48px; /* Diperbesar dari sebelumnya */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- SKILLS & FOOTER --- */
+.section-skills { padding: 80px 0; text-align: center; }
+.skills-flex { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
+.skill-card { width: 100px; height: 100px; background: #111; border: 1px solid #222; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+
+.footer-section { padding: 100px 0; background: #050505; border-top: 1px solid #111; }
+.footer-wrapper { display: flex; justify-content: space-between; }
+.footer-heading { font-size: 42px; margin-bottom: 15px; }
+.footer-sub { color: var(--dim-text); margin-bottom: 40px; }
+.contact-row { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+.icon-wrap { width: 40px; height: 40px; border: 1px solid #333; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.diagonal-pattern { width: 180px; height: 180px; background-image: repeating-linear-gradient(45deg, #222 0, #222 1px, transparent 1px, transparent 12px); opacity: 0.4; }
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; z-index: 1100; }
+    .nav-menu { position: fixed; right: -100%; top: 0; background: #0a0a0a; height: 100vh; width: 75%; flex-direction: column; justify-content: center; transition: 0.5s ease; box-shadow: -10px 0 30px rgba(0,0,0,0.5); }
+    .nav-menu.active { right: 0; }
+    
+    /* Animasi Hamburger */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    .hero-container, .portfolio-item, .footer-wrapper { flex-direction: column; text-align: center; }
+    .hero-title { font-size: 40px; }
+    .stats-grid, .hire-grid { grid-template-columns: repeat(2, 1fr); }
+    .portfolio-info { padding-left: 0; padding-top: 25px; flex-direction: column; gap: 20px; }
+    .hero-image { order: -1; margin-bottom: 30px; }
+    .footer-right { display: none; }
+}
+
+/* Container Utama Foto */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bingkai Melingkar */
+.profile-frame {
+    width: 320px; /* Ukuran tetap lebar */
+    height: 360px; /* Ukuran tetap tinggi */
+    border-radius: 50%; /* Membuat lingkaran sempurna */
+    padding: 15px; /* Jarak antara bingkai dan foto */
+    border: 4px solid var(--purple); /* Garis bingkai warna ungu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Efek cahaya ungu di belakang bingkai */
+    box-shadow: 0 0 50px rgba(125, 95, 255, 0.4);
+    transition: 0.5s ease;
+}
+
+/* Efek Hover: Cahaya makin terang saat kursor di atas foto */
+.profile-frame:hover {
+    box-shadow: 0 0 80px rgba(125, 95, 255, 0.7);
+    transform: scale(1.02);
+}
+
+/* Pengaturan Foto di Dalam Bingkai */
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Foto tetap proporsional meski dipotong lingkaran */
+    border-radius: 50%; /* Foto ikut jadi lingkaran */
+    background: #1a1a1a; /* Warna cadangan jika foto transparan */
+}
+
+/* Responsif: Perkecil ukuran di layar HP */
+@media (max-width: 768px) {
+    .profile-frame {
+        width: 280px;
+        height: 280px;
+        margin-top: 20px;
+    }
+}
+
+/* Pengaturan Gambar di Tools/Skills */
+.skill-card img {
+    width: 70px;       /* Ukuran ikon di dalam kotak tools */
+    height: 70px;
+    object-fit: contain; /* Agar gambar tidak gepeng *//* Membuat ikon monokrom (opsional) */
+    opacity: 0.6;
+    transition: 0.3s ease;
+}
+
+.skill-card:hover img {
+    filter: grayscale(0%); /* Ikon berwarna kembali saat hover */
+    opacity: 100;
+    transform: scale(1.1);
+}
+
+/* Pengaturan Gambar di Ikon Contact (Footer) */
+.icon-wrap img {
+    width: 22px;       /* Ukuran ikon di dalam lingkaran footer */
+    height: 22px;
+    object-fit: contain;
+    /* Jika ikon berwarna hitam, gunakan filter ini untuk jadi putih (opsional) */
+    filter: brightness(0) invert(1); 
+}
+
+/* Memperbesar bingkai footer sedikit agar gambar tidak sesak */
+.icon-wrap {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0a0a0a;
+    transition: 0.3s;
+}
+
+.icon-wrap:hover {
+    border-color: var(--purple);
+    box-shadow: 0 0 10px rgba(125, 95, 255, 0.3);
+}
+
